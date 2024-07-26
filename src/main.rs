@@ -12,7 +12,7 @@ fn main() {
     for stream in listener.incoming() {
         match stream {
             Ok(mut stream) => {
-                let buf= "PONG".as_bytes(); 
+                let buf= "+PONG\r\n".as_bytes(); 
                 stream.write(buf);
                 println!("accepted new connection");
             }
